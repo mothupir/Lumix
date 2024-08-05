@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/primeng/resources/primeng.css';
+@import '../node_modules/primeicons/primeicons.css';
+@import '../node_modules//primeng/resources/themes/bootstrap4-light-purple/theme.css';
+@import '../node_modules/primeflex/primeflex.css';
+
+html {
+    margin: auto;
+    min-width: 770px;
+
+}
+
+.p-toolbar {
+    padding: 7px 10px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 3px 3px -3px var(--primary-color);
+}
+
+button, input {
+    padding: 4px 8px;
+}
+
+.p-dropdown-label {
+    padding: 5px 8px;
+    width: 120px;
+}
+
+.p-dropdown-item {
+    margin: 3px;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
