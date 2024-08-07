@@ -3,18 +3,13 @@
 @import '../node_modules//primeng/resources/themes/bootstrap4-light-purple/theme.css';
 @import '../node_modules/primeflex/primeflex.css';
 
-html {
-    margin: auto;
-    min-width: 770px;
-
-}
-
 .p-toolbar {
     padding: 7px 10px;
     background: transparent;
     border: none;
-    border-radius: 0;
+    border-radius: 5px;
     box-shadow: 0 3px 3px -3px var(--primary-color);
+    background: var(--surface-50);
 }
 
 button, input {
@@ -26,8 +21,25 @@ button, input {
     width: 120px;
 }
 
-.p-dropdown-item {
+.p-dropdown-item, .p-autocomplete-item {
     margin: 3px;
     padding: 3px 8px;
     border-radius: 5px;
+}
+
+.p-carousel * {
+    padding: 0;
+    margin: 0;
+}
+
+.p-carousel .p-carousel-indicators {
+    display: none;
+}
+
+.p-autocomplete {
+    width: 100%;
+}
+
+.p-autocomplete input {
+    width: 100%;
 }

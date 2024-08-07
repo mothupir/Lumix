@@ -1,5 +1,5 @@
-<div class="flex flex-column justify-content-center gap-2 m-auto sm:w-12 md:w-12 lg:w-10 xl:w-8">
-    <p-toolbar>
+<div class="flex flex-column justify-content-center m-auto sm:w-12 md:w-12 lg:w-10 xl:w-8">
+    <p-toolbar class="mb-1">
         <div class="p-toolbar-group-start">
             <div class="icon">
                 <a routerLink="/home" routerLinkActive="active">
@@ -8,16 +8,20 @@
             </div>
         </div>
         <div class="p-toolbar-group-end">
-            <p-dropdown 
+            <!--<p-dropdown 
                 [options]="wallets" 
                 [(ngModel)]="selectedWallet" 
                 optionLabel="name" 
-                placeholder="Select a Wallet" />
-            <p-button (onClick)="connect()" label="Connect" icon="pi pi-sign-in" iconPos="right" class="ml-2" [raised]="true" severity="success" />
+                placeholder="Select a Wallet" />-->
+            <p-button (onClick)="goToDashboard()" label="Dashboard" icon="pi pi-chart-bar" iconPos="right" raised="true" severity="info" outlined="true" />
+            <p-button (onClick)="connect()" *ngIf="!connected" label="Login" icon="pi pi-sign-in" iconPos="right" class="ml-2" [raised]="true" severity="success" text="true" />
+            <p-button (onClick)="connect()" *ngIf="connected" label="Logout" icon="pi pi-sign-out" iconPos="right" class="ml-2" [raised]="true" severity="danger" text="true" />
         </div>
     </p-toolbar>
+
     <router-outlet />
-    <footer class="flex justify-content-end w-12 p-2 mt-2 mb-1 gap-1 surface-50">
+    
+    <footer class="flex justify-content-end w-12 mt-2 p-2 surface-50">
         <div class="text-xs font-italic text-600">Lumix &#64;{{getYear()}}</div>
     </footer>
 </div>

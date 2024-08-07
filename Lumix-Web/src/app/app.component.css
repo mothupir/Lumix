@@ -12,4 +12,5 @@
 
 footer {
     box-shadow: 0 -3px 3px -3px var(--primary-color);
+    border-radius: 5px;
 }

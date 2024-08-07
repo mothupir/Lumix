@@ -1,0 +1,20 @@
+<p-galleria 
+    [value]="events" 
+    [showIndicators]="false" 
+    [circular]="true"
+    [showItemNavigatorsOnHover]="true"
+    [autoPlay]="true"
+    [showThumbnails]="false"
+    [showItemNavigators]="true" 
+    [responsiveOptions]="responsiveOptions" 
+    [containerStyle]="{ 'max-width': '100%' }">
+        <ng-template pTemplate="item" let-item>
+            <div class="p-5 bg-purple-300 w-full">
+                {{item.name}}
+            </div>
+        </ng-template>
+        <ng-template pTemplate="caption" let-item>
+            <h4 class="m-0 p-0">{{ item.name }}</h4>
+            <p class="m-0 p-0">{{ item.description }}</p>
+        </ng-template>
+</p-galleria>

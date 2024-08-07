@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { ToolbarModule } from 'primeng/toolbar';
 import { DropdownModule } from 'primeng/dropdown';
 import { CommonModule } from '@angular/common';
+import { WalletService } from './services/wallet.service';
 
 interface Wallet {
   name: string;
@@ -22,8 +23,11 @@ export class AppComponent implements OnInit {
   title = 'Lumix';
 
   wallets: Wallet[] | undefined;
+  connected: boolean | undefined = true;
 
   selectedWallet: Wallet | undefined;
+
+  constructor(private walletService: WalletService, private router: Router) {}
 
   ngOnInit() {
       this.wallets = [
@@ -37,7 +41,16 @@ export class AppComponent implements OnInit {
   }
 
   connect() {
+    this.connected = this.connected ? false : true;
 
+    if (!this.connected) {
+      this.router.navigateByUrl('/home');
+    }
+  }
+
+  goToDashboard() {
+    console.log("Dashboard");
+    this.router.navigateByUrl('/dashboard');
   }
 
   getYear() {
